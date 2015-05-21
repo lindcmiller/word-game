@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="wordguess.css">
+  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
+  <title>wordcrunch</title>
+
+</head>
+
+<body>
+
+  <header>
+      <h1>wordcrunch</h1>
+  </header>
+
+  <div class = "wrapper">
+      <h4>Guess each letter to complete the word.</h3>
+
+      <ul class="word">
+        <li class="blank"></li>
+        <li class="blank"></li>
+        <li class="blank"></li>
+        <li class="blank"></li>
+        <li class="blank"></li>
+        <li class="blank"></li>
+      </ul>
+
+      <form class="guess">
+          <input type = "text" height= 20px width= 20px class = "guess-input">
+          <button id="submit-button">Submit Guess!</button>
+      </form>
+
+      <span class="remaining-guesses">
+
+      </span>
+
+      <p class="guessed-letters">
+
+      </p>
+
+  </div>
+
+  <script src="wordguess.js"></script>
+
+</body>
+
+</html>
