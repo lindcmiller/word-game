@@ -1,3 +1,6 @@
+
+window.onload = function play() {
+
 var hangmanWords = [
   "the","of","and","a","to","in","is","you","that","it","he",
   "was","for","on","are","as","with","his","they","I","at","be",
@@ -12,81 +15,91 @@ var hangmanWords = [
   "come","made","may","part"
 ];
 
-var word = document.querySelector('.word');
-var blank = document.querySelector;('.blank');
-var guessInput = document.querySelector('.guess-input');
-var remainingGuesses = document.querySelector('.remaining-guesses');
-var guessedLetters = document.querySelector('.guessed-letters');
+var word = document.querySelector('wordbox');
+var letter = document.querySelector('.letter').value;
+var guessInput = document.querySelector('.guess-input').value;
+var remainingGuesses = document.querySelector('.remaining-guesses').value;
+var guessedLetters = document.querySelector('.guessed-letters').value;
+var answerDisplay = document.querySelector('.answer-display').value;
 
 //filters words with 3+ letters for potential selection into an array
 function filterWords() {
   var filteredWords = [];
-    if(hangmanWords.length > 2){
+    if(hangmanWords.length >= 3){
       filteredWords.push();
     }
 }
 
 //chooses 1 random word from filtered selection
 function chooseWord(){
-  var word = Math.floor(Math.random() * filteredWords.length);
+  var word = parseInt(Math.floor(Math.random() * filteredWords.length));
     return word;
 };
 
-// split word into letters
-function
-
+///TEST FUNCTIONS AGAIN FOR FUNCTIONALITY FROM HERE /////
 
 //sets correct # of blanks according to chosen word
 function setBlanks (){
 	for(i=0; i < word.length; i++){
 		word[i] = word.charAt(i);
-		word.push[i] = "_";
+		word.push[i] = "_ ";
 	}
 }
 
+// split word into letters0
+function eachLetter() {
+  var word = word.split('');
+  var chosenWordArray = [];
+// ? below //
+  for (i=0; i < word.length; i++) {
+    chosenWordArray.push(('<li class="letter">') + word[i] + '</li>');
+  }
+
+  word.innerHTML = chosenWordArray.join("");
+
+  chosenWordArray = word;
+}
+
+
 //initiates guess check instead of submitting form
-submit-button.addEventListener("click", function (event) {
-    event.stopPropagation();
-    event.preventDefault();
+document.querySelector('submit-button').addEventListener('click', function (e) {
+    e.stopPropagation();
+    e.preventDefault();
     checkGuess();
 });
 
-///what's happening here?
-for (i=0;i<word.length;i+=1) {
-  blankArr.push("_ ");
-  blankArr.join(" ");
-  var blankArrString = blankArr.toString();
-  var blankArrEdited = blankArrString.replace(/,/g," ");
-  word.innerHTML = blankArrEdited;
-}
-
 function checkGuess () {
 
-if (parseInt(guess.value) === word) {
-    answerDisplay.innerHTML = "Correct! There is a " + letterGuess + "." +
-        "What is your next guess?";
-    return guess();
-}
-else (guess.value !== word) {
-    answerDisplay.innerHTML = "Sorry. There is no " + guessedLetters + ". Please try again.";
-    return guess();
-}
-guess += 1;
+  if (parseInt(guessInput.value) === chosenWordArray[i]) {
+      answerDisplay.innerHTML = "Correct! There is a " + guessInput + "." +
+          "What is your next guess?";
+  } else {
+      answerDisplay.innerHTML = "Sorry. There is no " + guessInput + ". Please try again.";
+  }
+
+remainingGuesses -= 1;
+//need to set input field empty //
+
 }
 
 //add guessed letter into word-in-progress
 function pushGuess () {
-      guessedArr.push(guess);
-      var guessedArrString = guessedArr.toString();
-      var guessedArrEdited = guessedArrString.replace(/,/g," ");
-      lettersGuessedClass.innerHTML = lettersGuessedArrEdited;
+      word.push(guessInput);  ///"word" not correct variable?
 }
 
 
 //sets maximum number of user guesses
-document.querySelector('.guess-count').textContent = '10';
+remainingGuesses.textContent = '15';
 
-if (.guess-count === 10) {
+if (remainingGuesses === 0) {
     answerDisplay.innerHTML = "Game Over! The word was" + word + ".";
   }
 }
+
+   // reset game
+
+//  document.getElementById('reset').onclick = function() {
+//    correct.parentNode.removeChild(correct); //rename these variables
+//    letters.parentNode.removeChild(letters);
+//    play();
+//  }

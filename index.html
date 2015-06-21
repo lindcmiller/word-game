@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="wordguess.css">
   <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+  <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
   <title>wordcrunch</title>
 
@@ -16,34 +17,33 @@
 
 <body>
 
+  <div class = "wrapper">
   <header>
-      <h1>wordcrunch</h1>
+
+    <p class="remaining-guesses">
+      20
+    </p>
+
+    <p class="guessed-letters">A, B, C</p>
+
+    <h1 class="header-logo">wordcrunch</h1>
+
   </header>
 
-  <div class = "wrapper">
-      <h4>Guess each letter to complete the word.</h3>
-
-      <ul class="word">
-        <li class="blank"></li>
-        <li class="blank"></li>
-        <li class="blank"></li>
-        <li class="blank"></li>
-        <li class="blank"></li>
-        <li class="blank"></li>
+      <ul id="wordbox">
+        <li class="letter">_</li>
       </ul>
 
-      <form class="guess">
-          <input type = "text" height= 20px width= 20px class = "guess-input">
-          <button id="submit-button">Submit Guess!</button>
+      <h4>Guess each letter to complete the word.</h4>
+
+      <form>
+          <input type="text" class="guess-input">
+          <button id="submit-button">Guess!</button>
       </form>
 
-      <span class="remaining-guesses">
+    <p class="answer-display">Response to Guess</p>
 
-      </span>
-
-      <p class="guessed-letters">
-
-      </p>
+    </p>
 
   </div>
 

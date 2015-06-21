@@ -13,7 +13,7 @@ body {
 p {margin-bottom: 1.3em;}
 
 h1, h2, h3, h4 {
-  margin: 1.414em 0 0.5em;
+  margin: 0.5em 0;
   font-weight: inherit;
   line-height: 1.2;
 }
@@ -33,10 +33,79 @@ small, .font_small {font-size: 0.618em;}
 
 ul {
   list-style: none;
-  display: flex;
-  flex-direction: row;
 }
 
 li {
-  width: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.remaining-guesses, .guessed-letters {
+  display: inline;
+  padding: 0.5em 0.5em 0 0.5em;
+  font-size: 1.5em;
+}
+
+.remaining-guesses {
+  float: left;
+}
+
+.guessed-letters {
+  float: right;
+}
+
+.header-logo {
+  width: 100%;
+  clear: both;
+  color: #003366;
+  text-shadow: -1px 0 #D1FAF0, 0 1px #D1FAF0, 1px 0 #D1FAF0, 0 -1px #D1FAF0;
+}
+
+.blank {
+  color: #003366;
+  font-size: 5em;
+  text-align: center;
+  margin: auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+#wordbox {
+  display: block;
+  width: 100%;
+  marging: auto;
+  text-align: center;
+}
+
+.guess-input {
+  display: block;
+  height: 2em;
+  width: 1.5em;
+  border: 0.025em solid #003366;
+  font-family: 'Bangers', sans-serif;
+  font-size: 2.5em;
+  background-color: #D1FAF0;
+  color: #003366;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+#submit-button {
+  display: block;
+  height: 1.5em;
+  width: 3em;
+  font-family: 'Bangers', sans-serif;
+  font-size: 2em;
+  border: 0.05em solid #003366;
+  background-color: #D1FAF0;
+  color: #003366;
+  text-align: center;
+  margin: auto;
+}
+
+.answer-display {
+  font-size: 1.25em;
+  margin-top: 1em;
 }
